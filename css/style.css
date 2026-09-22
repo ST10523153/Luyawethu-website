@@ -757,3 +757,127 @@ footer nav ul li a:hover {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+/* ============================================================
+   19. HERO SLIDESHOW (Auto-fading between 3 images)
+   ============================================================ */
+.hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* Container for the slideshow */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Each slide is a background image */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeSlide 15s infinite;
+}
+
+/* Each slide gets its own image */
+.slide-1 {
+    background-image: url('../images/hero1.jpg');
+    animation-delay: 0s;
+}
+
+.slide-2 {
+    background-image: url('../images/hero2.jpg');
+    animation-delay: 5s;
+}
+
+.slide-3 {
+    background-image: url('../images/hero3.jpg');
+    animation-delay: 10s;
+}
+
+/* The fade animation */
+@keyframes fadeSlide {
+    0%      { opacity: 0; }
+    8%      { opacity: 1; }
+    33%     { opacity: 1; }
+    41%     { opacity: 0; }
+    100%    { opacity: 0; }
+}
+
+/* Dark overlay so text is readable over the images */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 54, 93, 0.65);
+    z-index: 1;
+}
+
+/* Make sure text and buttons are above the images */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    background: rgba(26, 54, 93, 0.6);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* ============================================================
+   20. TEXT LOGO STYLING (no image logo)
+   ============================================================ */
+.logo h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.logo a:hover {
+    color: #E2E8F0;
+    text-decoration: none;
+}

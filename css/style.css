@@ -1,179 +1,306 @@
-/* ===== BASE STYLES ===== */
+/* ============================================================
+   FILE: style.css
+   AUTHOR: Ongeziwe Dlamini
+   STUDENT NUMBER: ST10523153
+   DESCRIPTION: Main stylesheet for Luyawethu Student Residences
+   PART: 2 - Designing the Visuals (CSS Styling & Responsive Design)
+   ============================================================ */
+
+/* ============================================================
+   1. CSS RESET
+   Removes default browser styling so all browsers look the same.
+   The * selector applies this to every element.
+   ============================================================ */
+* {
+    margin: 0;                      /* Removes default outer spacing */
+    padding: 0;                     /* Removes default inner spacing */
+    box-sizing: border-box;         /* Makes padding part of the element's width */
+}
+
+/* Enables smooth scrolling when clicking anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================================
+   2. BASE STYLES
+   Default fonts, colours, and spacing for the whole site.
+   ============================================================ */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;  /* Main font */
+    font-size: 1rem;                /* 1rem = 16px — base size */
+    line-height: 1.6;               /* Space between lines of text */
+    color: #1A202C;                 /* Dark grey text colour */
+    background-color: #F7FAFC;      /* Very light grey background */
 }
 
-/* Center everything in a container */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+/* All headings use Montserrat for a modern, professional look */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #1A365D;                 /* Deep navy blue */
+    line-height: 1.3;
+    margin-bottom: 1rem;
 }
 
-/* ===== NAVIGATION MENU ===== */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #1d4ed8; /* Blue background */
-    overflow: hidden;
-    border-radius: 8px;
+/* Heading sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Paragraph spacing */
+p {
+    margin-bottom: 1rem;
 }
 
-nav ul li {
-    float: left;
-}
-
-nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    background-color: #0b3b5c; /* Darker blue when you hover */
-}
-
-/* ===== HEADINGS ===== */
-h1 {
-    color: #1d4ed8;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #1d4ed8;
-    font-size: 28px;
-    margin-top: 30px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 8px;
-}
-
-/* ===== IMAGES ===== */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin: 15px 0;
-}
-
-/* ===== LISTS (Why Choose Luyawethu) ===== */
-ul {
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 8px;
-    font-size: 18px;
-}
-
-/* ===== LINKS & BUTTONS (Enquire / View Rooms) ===== */
+/* Links: colour and smooth transition on hover */
 a {
-    color: #1d4ed8;
-    text-decoration: none;
+    color: #2B6CB0;                 /* Bright blue */
+    text-decoration: none;          /* Remove underline by default */
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #1A365D;                 /* Darker blue on hover */
     text-decoration: underline;
 }
 
-/* Style the "Enquire Now" and "View Rooms" like buttons */
+/* Lists: indentation and spacing */
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Images: responsive by default */
+img {
+    max-width: 100%;                /* Never overflow the container */
+    height: auto;                   /* Keep aspect ratio */
+    display: block;
+}
+
+/* ============================================================
+   3. UTILITY CLASSES
+   Reusable classes used throughout the site.
+   ============================================================ */
+
+/* Container: centres content and limits max width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;                 /* Centre horizontally */
+    padding: 0 1.5rem;              /* Side padding on small screens */
+}
+
+/* Button base styles (shared by all buttons) */
 .btn {
     display: inline-block;
-    background-color: #1d4ed8;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background-color: #0b3b5c;
-    text-decoration: none;
-}
-
-/* ===== MOVIE CARD (If you still want it) ===== */
-.movie-card {
-    max-width: 320px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #b8c2cc;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.movie-card h2 {
-    color: #1d4ed8;
-    font-size: 22px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: 'Montserrat', Arial, sans-serif;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
     border: none;
-    margin-top: 0;
 }
 
-.movie-card p {
-    font-style: italic;
-    text-align: center;
-    color: #333;
+/* Primary button: blue background */
+.btn-primary {
+    background-color: #2B6CB0;
+    color: #FFFFFF;
 }
+
+/* Primary button hover: darker blue with a lift effect */
+.btn-primary:hover {
+    background-color: #1A365D;
+    color: #FFFFFF;
+    text-decoration: none;
+    transform: translateY(-2px);    /* Lift effect */
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+}
+
+/* Secondary button: green background */
+.btn-secondary {
+    background-color: #48BB78;
+    color: #FFFFFF;
+}
+
+/* Secondary button hover */
+.btn-secondary:hover {
+    background-color: #2F855A;
+    color: #FFFFFF;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+/* Small button size (used inside room cards) */
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
 /* ============================================================
-   5. HERO SECTION
+   4. HEADER & NAVIGATION
+   Uses Flexbox to arrange logo and menu side by side.
+   ============================================================ */
+header {
+    background-color: #1A365D;      /* Deep navy blue */
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    display: flex;                  /* Flexbox layout */
+    justify-content: space-between; /* Logo left, nav right */
+    align-items: center;            /* Vertically centred */
+    flex-wrap: wrap;                /* Wrap on small screens */
+    position: sticky;               /* Sticks to top when scrolling */
+    top: 0;
+    z-index: 100;                   /* Stays above other content */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo heading (text logo) */
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+/* Navigation list: horizontal row */
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;               /* No bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation links */
+nav ul li a {
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Nav link hover and active state */
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #2B6CB0;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* ============================================================
+   5. HERO SECTION WITH SLIDESHOW
+   Shows 3 images that fade automatically every 5 seconds.
    ============================================================ */
 .hero {
     position: relative;
-    text-align: center;
-    color: #FFFFFF;
     min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1A365D; /* Fallback if image doesn't load */
     overflow: hidden;
+    text-align: center;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 100%);  /* Fallback */
 }
 
-.hero img {
+/* Container for slides */
+.hero-slideshow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
     z-index: 0;
 }
 
+/* Each slide: full-size image */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* Crop to fill the container */
+    opacity: 0;
+    animation: fadeSlide 15s infinite;  /* Loop forever */
+}
+
+/* Delays: each slide appears 5 seconds apart */
+.slide-1 { animation-delay: 0s; }
+.slide-2 { animation-delay: 5s; }
+.slide-3 { animation-delay: 10s; }
+
+/* Pictures fill the hero */
+.hero-slideshow picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fade animation: 0% → visible → invisible → 100% */
+@keyframes fadeSlide {
+    0%      { opacity: 0; }
+    8%      { opacity: 1; }
+    33%     { opacity: 1; }
+    41%     { opacity: 0; }
+    100%    { opacity: 0; }
+}
+
+/* Dark overlay so text stays readable */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 54, 93, 0.65);
+    z-index: 1;
+}
+
+/* Hero text block */
 .hero-text {
     position: relative;
-    z-index: 1;
-    background: rgba(26, 54, 93, 0.75);
+    z-index: 2;
+    background: rgba(26, 54, 93, 0.6);
     padding: 2rem 3rem;
     border-radius: 10px;
     max-width: 700px;
     margin: 2rem;
 }
 
+/* Hero heading */
 .hero-text h1 {
     font-size: 2.8rem;
     color: #FFFFFF;
     margin-bottom: 1rem;
 }
 
+/* Hero paragraph */
 .hero-text p {
     font-size: 1.15rem;
     margin-bottom: 1.5rem;
+    color: #FFFFFF;
 }
 
+/* Hero buttons row */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -182,7 +309,7 @@ a:hover {
 }
 
 /* ============================================================
-   6. SECTIONS (Why Choose Us, Quick Contact)
+   6. SECTIONS (general)
    ============================================================ */
 section {
     padding: 3rem 1.5rem;
@@ -212,6 +339,7 @@ section {
 
 /* ============================================================
    7. ROOM GRID
+   CSS Grid arranges cards in a responsive grid.
    ============================================================ */
 .room-grid {
     display: grid;
@@ -220,6 +348,7 @@ section {
     margin-bottom: 2rem;
 }
 
+/* Room card styling */
 .room-card {
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -230,16 +359,17 @@ section {
     padding-bottom: 1.5rem;
 }
 
+/* Hover effect on room cards */
 .room-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Room card image */
 .room-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background-color: #E2E8F0; /* Placeholder background while image loads */
 }
 
 .room-card h3 {
@@ -313,40 +443,9 @@ footer nav ul li a:hover {
     background-color: transparent;
     text-decoration: underline;
 }
-/* Hide broken image icons and show clean placeholders */
-.hero img:not([src]),
-.hero img[src=""],
-.room-card img:not([src]) {
-    display: none;
-}
 
-/* Fallback background for hero when no image */
-.hero {
-    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 100%);
-}
 /* ============================================================
-   10. FALLBACK & PLACEHOLDER STYLES
-   ============================================================ */
-
-/* Hero fallback gradient (shows if image is missing) */
-.hero {
-    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 100%);
-}
-
-/* Hide broken image icons */
-.hero img:not([src]),
-.hero img[src=""],
-.room-card img:not([src]),
-.room-card img[src=""] {
-    display: none;
-}
-
-/* Placeholder background for room cards while images load */
-.room-card img {
-    background-color: #E2E8F0;
-}
-/* ============================================================
-   11. FORMS (Enquiry + Contact)
+   10. FORMS (Enquiry + Contact)
    ============================================================ */
 .enquiry-form,
 .quick-contact-form,
@@ -371,6 +470,7 @@ footer nav ul li a:hover {
     color: #1A365D;
 }
 
+/* Input, select, and textarea styling */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -385,6 +485,7 @@ footer nav ul li a:hover {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Focus state: highlight active input */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -400,7 +501,7 @@ footer nav ul li a:hover {
 }
 
 /* ============================================================
-   12. PAGE HEADER (for About, Rooms, Enquiry, Contact)
+   11. PAGE HEADER (About, Rooms, Enquiry, Contact)
    ============================================================ */
 .page-header {
     text-align: center;
@@ -421,7 +522,7 @@ footer nav ul li a:hover {
 }
 
 /* ============================================================
-   13. ABOUT PAGE STYLES
+   12. ABOUT PAGE
    ============================================================ */
 .history,
 .mission-vision,
@@ -438,7 +539,6 @@ footer nav ul li a:hover {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1.5rem;
-    background-color: #E2E8F0;
 }
 
 .mission-vision {
@@ -471,7 +571,7 @@ footer nav ul li a:hover {
 }
 
 /* ============================================================
-   14. ROOMS PAGE STYLES
+   13. ROOMS PAGE
    ============================================================ */
 .room-listings {
     max-width: 1000px;
@@ -479,6 +579,7 @@ footer nav ul li a:hover {
     padding: 0 1.5rem;
 }
 
+/* Room detail: image on left, info on right */
 .room-detail {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -496,24 +597,10 @@ footer nav ul li a:hover {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    background-color: #E2E8F0;
 }
 
 .room-info h2 {
     margin-bottom: 0.5rem;
-}
-
-.room-info .price {
-    color: #2B6CB0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.room-info .price span {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #4A5568;
 }
 
 .room-info ul {
@@ -547,7 +634,7 @@ footer nav ul li a:hover {
 }
 
 /* ============================================================
-   15. CONTACT PAGE STYLES
+   14. CONTACT PAGE
    ============================================================ */
 .contact-details {
     max-width: 900px;
@@ -564,11 +651,6 @@ footer nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
-}
-
-.contact-item h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
 }
 
 .map-section {
@@ -593,14 +675,14 @@ footer nav ul li a:hover {
     width: 100%;
     border: 0;
 }
+
 /* ============================================================
-   16. RESPONSIVE DESIGN — TABLET (max-width: 900px)
+   15. RESPONSIVE DESIGN — TABLET (max-width: 900px)
+   Adjustments for tablets and smaller laptops.
    ============================================================ */
 @media (max-width: 900px) {
-
-    /* Header: stack logo and nav */
     header {
-        flex-direction: column;
+        flex-direction: column;     /* Stack logo above nav */
         gap: 1rem;
         padding: 1rem;
     }
@@ -611,67 +693,49 @@ footer nav ul li a:hover {
         gap: 0.75rem;
     }
 
-    /* Hero: smaller text */
     .hero-text {
         padding: 1.5rem;
         margin: 1rem;
     }
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 1rem; }
 
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    /* Room grid: 2 columns */
     .room-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns */
     }
 
-    /* Room detail (rooms page): stack image on top */
     .room-detail {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;             /* Stack image over text */
     }
 
-    /* Mission / Vision: stack */
     .mission-vision {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;             /* Stack mission/vision */
     }
 
-    /* Contact details: 2 columns */
     .contact-details {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* ============================================================
-   17. RESPONSIVE DESIGN — MOBILE (max-width: 600px)
+   16. RESPONSIVE DESIGN — MOBILE (max-width: 600px)
+   Adjustments for phones.
    ============================================================ */
 @media (max-width: 600px) {
-
-    /* Base font sizes for small screens */
     html {
-        font-size: 14px;
+        font-size: 14px;            /* Shrink all rem-based sizes */
     }
 
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.2rem; }
 
-    /* Header: smaller padding */
-    header {
-        padding: 0.75rem;
-    }
+    header { padding: 0.75rem; }
+    .logo h1 { font-size: 1.4rem; }
 
-    .logo h1 {
-        font-size: 1.4rem;
-    }
-
-    /* Navigation: stack vertically */
     nav ul {
-        flex-direction: column;
+        flex-direction: column;     /* Stack nav links vertically */
         align-items: center;
         gap: 0.25rem;
     }
@@ -681,51 +745,29 @@ footer nav ul li a:hover {
         padding: 0.5rem 1rem;
     }
 
-    /* Hero: full width, smaller text */
-    .hero {
-        min-height: 400px;
-    }
+    .hero { min-height: 400px; }
 
     .hero-text {
         padding: 1.25rem;
         margin: 0.5rem;
-        border-radius: 8px;
     }
 
-    .hero-text h1 {
-        font-size: 1.6rem;
-    }
+    .hero-text h1 { font-size: 1.6rem; }
 
     .hero-buttons {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .btn {
-        width: 100%;
-    }
+    .btn { width: 100%; }           /* Full-width buttons */
 
-    /* Room grid: 1 column */
-    .room-grid {
-        grid-template-columns: 1fr;
-    }
+    .room-grid { grid-template-columns: 1fr; }   /* 1 column */
+    .contact-details { grid-template-columns: 1fr; }
 
-    /* Contact details: 1 column */
-    .contact-details {
-        grid-template-columns: 1fr;
-    }
+    .room-detail img { height: 200px; }
 
-    /* Room detail: smaller image */
-    .room-detail img {
-        height: 200px;
-    }
+    section { padding: 2rem 1rem; }
 
-    /* Sections: less padding */
-    section {
-        padding: 2rem 1rem;
-    }
-
-    /* Forms: less padding */
     .enquiry-form,
     .quick-contact-form,
     .alternative-contact {
@@ -733,7 +775,6 @@ footer nav ul li a:hover {
         margin: 1rem auto;
     }
 
-    /* Footer: stack links */
     footer nav ul {
         flex-direction: column;
         gap: 0.5rem;
@@ -741,143 +782,10 @@ footer nav ul li a:hover {
 }
 
 /* ============================================================
-   18. RESPONSIVE DESIGN — LARGE DESKTOP (min-width: 1400px)
+   17. RESPONSIVE DESIGN — LARGE DESKTOP (min-width: 1400px)
    ============================================================ */
 @media (min-width: 1400px) {
-
-    .container {
-        max-width: 1320px;
-    }
-
-    .hero-text h1 {
-        font-size: 3.2rem;
-    }
-
-    .room-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-/* ============================================================
-   19. HERO SLIDESHOW (Auto-fading between 3 images)
-   ============================================================ */
-.hero {
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    text-align: center;
-    color: #FFFFFF;
-}
-
-/* Container for the slideshow */
-.hero-slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-/* Each slide is a background image */
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    animation: fadeSlide 15s infinite;
-}
-
-/* Each slide gets its own image */
-.slide-1 {
-    background-image: url('../images/hero1.jpg');
-    animation-delay: 0s;
-}
-
-.slide-2 {
-    background-image: url('../images/hero2.jpg');
-    animation-delay: 5s;
-}
-
-.slide-3 {
-    background-image: url('../images/hero3.jpg');
-    animation-delay: 10s;
-}
-
-/* The fade animation */
-@keyframes fadeSlide {
-    0%      { opacity: 0; }
-    8%      { opacity: 1; }
-    33%     { opacity: 1; }
-    41%     { opacity: 0; }
-    100%    { opacity: 0; }
-}
-
-/* Dark overlay so text is readable over the images */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 54, 93, 0.65);
-    z-index: 1;
-}
-
-/* Make sure text and buttons are above the images */
-.hero-text {
-    position: relative;
-    z-index: 2;
-    background: rgba(26, 54, 93, 0.6);
-    padding: 2rem 3rem;
-    border-radius: 10px;
-    max-width: 700px;
-    margin: 2rem;
-}
-
-.hero-text h1 {
-    font-size: 2.8rem;
-    color: #FFFFFF;
-    margin-bottom: 1rem;
-}
-
-.hero-text p {
-    font-size: 1.15rem;
-    margin-bottom: 1.5rem;
-    color: #FFFFFF;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-/* ============================================================
-   20. TEXT LOGO STYLING (no image logo)
-   ============================================================ */
-.logo h1 {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-    margin-bottom: 0;
-}
-
-.logo a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.logo a:hover {
-    color: #E2E8F0;
-    text-decoration: none;
+    .container { max-width: 1320px; }
+    .hero-text h1 { font-size: 3.2rem; }
+    .room-grid { grid-template-columns: repeat(4, 1fr); }
 }

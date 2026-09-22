@@ -3,18 +3,21 @@
 <head>
     <!-- 
     ======================================================
-    FILE: rooms.html
+    FILE: index.html
     AUTHOR: Ongeziwe Dlamini
     STUDENT NUMBER: ST10523153
-    DESCRIPTION: Rooms page for Luyawethu Student Residences
+    DESCRIPTION: Homepage for Luyawethu Student Residences
+    PART: 2 - Designing the Visuals (CSS Styling & Responsive Design)
     ======================================================
     -->
     <meta charset="UTF-8">
+    <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Us page for Luyawethu">
-    <title>About Us - Luyawethu Student Residences</title>
+    <!-- SEO: description shown in search engine results -->
+    <meta name="description" content="Luyawethu Student Residences - Affordable student accommodation near Vaal University. Safe, comfortable, and fully furnished rooms.">
+    <title>Luyawethu Student Residences</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Montserrat (headings) and Open Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -25,16 +28,17 @@
 <body>
 
     <!-- ============================================
-    HEADER: Contains logo and navigation menu
+    HEADER: Contains the text logo and navigation menu
     ============================================ -->
     <header>
+        <!-- Logo section: text-only logo linking back to homepage -->
         <div class="logo">
             <a href="index.html">
+                <h1>Luyawethu</h1>
             </a>
-            <h1>Luyawethu</h1>
         </div>
 
-        <!-- Navigation Menu -->
+        <!-- Navigation Menu: links to all 5 pages of the website -->
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
@@ -51,13 +55,36 @@
     ============================================ -->
     <main>
 
-        <!-- Hero Section with Slideshow -->
+        <!-- ============================================
+        HERO SECTION WITH SLIDESHOW
+        Displays 3 images that auto-fade every 5 seconds
+        Uses the <picture> element for responsive images
+        ============================================ -->
         <section class="hero">
             <div class="hero-slideshow">
-                <div class="slide slide-1"></div>
-                <div class="slide slide-2"></div>
-                <div class="slide slide-3"></div>
+                <!-- Slide 1: Front view of the building -->
+                <picture>
+                    <source media="(min-width: 900px)" srcset="images/hero1.jpg">
+                    <source media="(min-width: 600px)" srcset="images/hero1.jpg">
+                    <img src="images/hero1.jpg" alt="Front view of Luyawethu Student Residences" class="slide slide-1">
+                </picture>
+
+                <!-- Slide 2: Side view of the building -->
+                <picture>
+                    <source media="(min-width: 900px)" srcset="images/hero2.jpg">
+                    <source media="(min-width: 600px)" srcset="images/hero2.jpg">
+                    <img src="images/hero2.jpg" alt="Side view of Luyawethu Student Residences" class="slide slide-2">
+                </picture>
+
+                <!-- Slide 3: Entrance view -->
+                <picture>
+                    <source media="(min-width: 900px)" srcset="images/hero3.jpg">
+                    <source media="(min-width: 600px)" srcset="images/hero3.jpg">
+                    <img src="images/hero3.jpg" alt="Entrance view of Luyawethu Student Residences" class="slide slide-3">
+                </picture>
             </div>
+
+            <!-- Hero text overlay: heading, tagline, and call-to-action buttons -->
             <div class="hero-text">
                 <h1>Your Home Away From Home</h1>
                 <p>Affordable, safe, and comfortable student accommodation located just minutes from Vaal University.</p>
@@ -68,7 +95,10 @@
             </div>
         </section>
 
-                <!-- Why Choose Us Section -->
+        <!-- ============================================
+        WHY CHOOSE US SECTION
+        Lists the main benefits of staying at Luyawethu
+        ============================================ -->
         <section class="why-choose container">
             <h2>Why Choose Luyawethu?</h2>
             <ul>
@@ -82,53 +112,82 @@
             </ul>
         </section>
 
-               <!-- Room Preview Section -->
+        <!-- ============================================
+        ROOM PREVIEW SECTION
+        Shows a card for each of the 4 rooms
+        ============================================ -->
         <section class="room-preview container">
             <h2>Our Rooms</h2>
             <p style="text-align: center; margin-bottom: 2rem;">Four single rooms. No sharing. One has a private ensuite bathroom. Enquire for pricing.</p>
+
             <div class="room-grid">
+
                 <!-- Room 1 - Ensuite -->
                 <div class="room-card">
-                    <img src="images/room1.jpg" alt="Room 1 - Single room with ensuite bathroom">
+                    <picture>
+                        <source media="(min-width: 900px)" srcset="images/room1.jpg">
+                        <source media="(min-width: 600px)" srcset="images/room1.jpg">
+                        <img src="images/room1.jpg" alt="Room 1 - Single room with ensuite bathroom">
+                    </picture>
                     <h3>Room 1 — Ensuite</h3>
                     <a href="rooms.html#room1" class="btn btn-primary btn-small">View Details</a>
                 </div>
+
                 <!-- Room 2 -->
                 <div class="room-card">
-                    <img src="images/room2.jpg" alt="Room 2 - Single room with shared bathroom">
+                    <picture>
+                        <source media="(min-width: 900px)" srcset="images/room2.jpg">
+                        <source media="(min-width: 600px)" srcset="images/room2.jpg">
+                        <img src="images/room2.jpg" alt="Room 2 - Single room with shared bathroom">
+                    </picture>
                     <h3>Room 2 — Single</h3>
                     <a href="rooms.html#room2" class="btn btn-primary btn-small">View Details</a>
                 </div>
+
                 <!-- Room 3 -->
                 <div class="room-card">
-                    <img src="images/room3.jpg" alt="Room 3 - Single room with shared bathroom">
+                    <picture>
+                        <source media="(min-width: 900px)" srcset="images/room3.jpg">
+                        <source media="(min-width: 600px)" srcset="images/room3.jpg">
+                        <img src="images/room3.jpg" alt="Room 3 - Single room with shared bathroom">
+                    </picture>
                     <h3>Room 3 — Single</h3>
                     <a href="rooms.html#room3" class="btn btn-primary btn-small">View Details</a>
                 </div>
+
                 <!-- Room 4 -->
                 <div class="room-card">
-                    <img src="images/room4.jpg" alt="Room 4 - Single room with shared bathroom">
+                    <picture>
+                        <source media="(min-width: 900px)" srcset="images/room4.jpg">
+                        <source media="(min-width: 600px)" srcset="images/room4.jpg">
+                        <img src="images/room4.jpg" alt="Room 4 - Single room with shared bathroom">
+                    </picture>
                     <h3>Room 4 — Single</h3>
                     <a href="rooms.html#room4" class="btn btn-primary btn-small">View Details</a>
                 </div>
             </div>
+
+            <!-- Button linking to the full rooms page -->
             <div class="view-all">
                 <a href="rooms.html" class="btn btn-secondary">View All Rooms</a>
             </div>
         </section>
 
-        <!-- Quick Contact Section -->
+        <!-- ============================================
+        QUICK CONTACT SECTION
+        Displays phone, email, and location
+        ============================================ -->
         <section class="quick-contact container">
             <h2>Get In Touch</h2>
-            <p>📞 Phone: <a href="tel:+27123456789">012 345 6789</a></p>
-            <p>📧 Email: <a href="mailto:info@luyawethu.co.za">info@luyawethu.co.za</a></p>
+            <p>📞 Phone: <a href="tel:+27155550142">015 555 0142</a></p>
+            <p>📧 Email: <a href="mailto:stay@luyawethu-residences.co.za">stay@luyawethu-residences.co.za</a></p>
             <p>📍 Near Vaal University, South Africa</p>
         </section>
 
     </main>
 
     <!-- ============================================
-    FOOTER: Copyright and footer links
+    FOOTER: Copyright and navigation links
     ============================================ -->
     <footer>
         <p>&copy; 2026 Luyawethu Student Residences. All Rights Reserved.</p>

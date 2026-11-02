@@ -12,7 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="View our four single rooms at Luyawethu Student Residences. One ensuite, three with shared bathroom. All R4,500 per month.">
-    <title>Rooms - Luyawethu Student Residences</title>
+    <title>Our Rooms & Amenities | Luyawethu Student Residences</title>
+    <meta name="description" content="View our 4 single student rooms. One features a private ensuite bathroom. All rooms include Wi-Fi, study desks, and access to a shared kitchen.">
+    <meta name="keywords" content="single student rooms, ensuite student accommodation, shared student housing, Vaal University rooms">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,10 +58,14 @@
 
         <!-- Room Listings -->
         <section class="room-listings">
-
+            <!-- Search Bar for Rooms -->
+            <div class="search-container" style="margin-bottom: 2rem; text-align: center;">
+                <label for="roomSearch" style="font-weight: bold; margin-right: 10px;">Search for a room:</label>
+                <input type="text" id="roomSearch" placeholder="Type 'Ensuite', 'Single', 'Room 1'..." style="padding: 10px; width: 60%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
             <!-- Room 1 - Ensuite -->
             <div class="room-detail" id="room1">
-                <img src="images/room1.jpg" alt="Room 1 - Single room with private ensuite bathroom">
+                <img src="images/room1.jpg" alt="Room 1 - Single room with private ensuite bathroom" onclick="openLightbox(this.src)" style="cursor : pointer;">
                 <div class="room-info">
                     <h2>Room 1 — Ensuite</h2>
                     <ul>
@@ -76,7 +82,7 @@
 
             <!-- Room 2 -->
             <div class="room-detail" id="room2">
-                <img src="images/room2.jpg" alt="Room 2 - Single room with shared bathroom">
+                <img src="images/room2.jpg" alt="Room 2 - Single room with shared bathroom" onclick="openLightbox(this.src)" style="cursor: pointer;">
                 <div class="room-info">
                     <h2>Room 2 — Single</h2>
                     <ul>
@@ -93,7 +99,7 @@
 
             <!-- Room 3 -->
             <div class="room-detail" id="room3">
-                <img src="images/room3.jpg" alt="Room 3 - Single room with shared bathroom">
+                <img src="images/room3.jpg" alt="Room 3 - Single room with shared bathroom" onclick="openLightbox(this.src)" style="cursor: pointer;">
                 <div class="room-info">
                     <h2>Room 3 — Single</h2>
                     <ul>
@@ -110,7 +116,7 @@
 
             <!-- Room 4 -->
             <div class="room-detail" id="room4">
-                <img src="images/room4.jpg" alt="Room 4 - Single room with shared bathroom">
+                <img src="images/room4.jpg" alt="Room 4 - Single room with shared bathroom" onclick="openLightbox(this.src)" style="cursor: pointer;">
                 <div class="room-info">
                     <h2>Room 4 — Single</h2>
                     <ul>
@@ -139,7 +145,13 @@
                 <li>🔒 <strong>24/7 Security:</strong> Access control and CCTV for your safety</li>
             </ul>
         </section>
-
+        <!-- ============================================
+        LIGHTBOX GALLERY CONTAINER (Hidden by default)
+        ============================================ -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" alt="Enlarged room view">
+        </div>
     </main>
 
     <!-- ============================================

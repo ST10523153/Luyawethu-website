@@ -107,3 +107,26 @@ Luyawethu Student Residences is a small student accommodation business located n
 - Added shared amenities: kitchen, laundry, Wi-Fi, secure parking, 24/7 security.
 - Added fallback gradients for missing images.
 - Updated README with Part 2 details.
+---
+
+## Part 3 Details — Enhancing Functionality and SEO
+
+### Live Website
+The website has been successfully deployed and is live at:
+**https://luyawethu-student-residences.netlify.app**
+
+### What Was Done in Part 3
+- **Interactive Elements:** Added a JavaScript Lightbox Gallery to the Rooms page (click an image to enlarge).
+- **Dynamic Content:** Added a JavaScript Search Filter on the Rooms page to search by room type.
+- **Form Validation:** Added JavaScript client-side validation to both the Enquiry and Contact forms with error/success messages (simulating AJAX).
+- **SEO:** Added meta descriptions and keywords to all 5 HTML pages.
+- **SEO Files:** Created `robots.txt` and `sitemap.xml` in the root folder.
+- **Deployment:** Deployed the live website using Netlify connected to GitHub.
+
+### Changelog — Part 3
+- Added JavaScript Lightbox for room images.
+- Added JavaScript search filter for rooms.
+- Added form validation and success messages for Enquiry and Contact forms.
+- Added SEO meta tags to all pages.
+- Created `robots.txt` and `sitemap.xml`.
+- Deployed live site to Netlify.
